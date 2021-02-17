@@ -44,7 +44,7 @@ class DirectoryEntryAdapter(
                 R.drawable.ic_file_black_24dp
             }
 
-            fileName.text = item.name
+            fileName.text = item.name + "    " + item.length + "    " + item.lastModified
             mimeType.text = item.type ?: ""
             imageView.setImageResource(itemDrawableRes)
 

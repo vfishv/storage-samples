@@ -32,6 +32,8 @@ import androidx.documentfile.provider.DocumentFile
 data class CachingDocumentFile(private val documentFile: DocumentFile) {
     val name: String? by lazy { documentFile.name }
     val type: String? by lazy { documentFile.type }
+    val length: Long? by lazy { documentFile.length() }
+    val lastModified: Long? by lazy { documentFile.lastModified() }
 
     val isDirectory: Boolean by lazy { documentFile.isDirectory }
 
