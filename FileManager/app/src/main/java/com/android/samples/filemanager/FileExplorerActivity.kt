@@ -24,7 +24,10 @@ import android.os.Environment.getExternalStorageDirectory
 import android.view.View
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.BuildCompat
 import com.android.samples.filemanager.databinding.ActivityFileExplorerBinding
+import com.vanniktech.emoji.EmojiManager
+import com.vanniktech.emoji.ios.IosEmojiProvider
 import java.io.File
 
 const val MANAGE_EXTERNAL_STORAGE_PERMISSION_REQUEST = 1
@@ -43,6 +46,10 @@ class FileExplorerActivity : AppCompatActivity() {
         binding = ActivityFileExplorerBinding.inflate(layoutInflater)
         binding.toolbar.inflateMenu(R.menu.file_manager_menu)
         setContentView(binding.root)
+
+
+        // This line needs to be executed before any usage of EmojiTextView, EmojiEditText or EmojiButton.
+        EmojiManager.install(IosEmojiProvider())
 
         setupUi()
     }
