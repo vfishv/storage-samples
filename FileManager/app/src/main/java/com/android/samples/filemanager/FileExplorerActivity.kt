@@ -81,7 +81,7 @@ class FileExplorerActivity : AppCompatActivity() {
             requestStoragePermission(this)
         }
 
-        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, mutableListOf<String>())
+        adapter = ArrayAdapter(this, R.layout.item_file, R.id.text1, mutableListOf<String>())
         binding.filesTreeView.adapter = adapter
         binding.filesTreeView.setOnItemClickListener { _, _, position, _ ->
             val selectedItem = filesList[position]
